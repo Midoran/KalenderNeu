@@ -1,16 +1,19 @@
-def print_calendar(month, year):
+def print_calendar():
     # Set up the dictionary
-    months = {1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'June', 7: 'July', 8: 'August',
-              9: 'September', 10: 'October', 11: 'November', 12: 'December'}
-    monthdays = {'January': 31, 'March': 31, 'April': 30, 'May': 31, 'June': 30, 'July': 31, 'August': 31,
-                 'September': 30, 'October': 31, 'November': 30, 'December': 31}
-    month = int(month)
-    year = int(year)
+    months = {1: 'Januar', 2: 'Februar', 3: 'März', 4: 'April', 5: 'Mai', 6: 'Juni', 7: 'Juli', 8: 'August',
+              9: 'September', 10: 'Oktober', 11: 'November', 12: 'Dezember'}
+    monthdays = {'Januar': 31, 'März': 31, 'April': 30, 'Mai': 31, 'Juni': 30, 'Juli': 31, 'August': 31,
+                 'September': 30, 'Oktober': 31, 'November': 30, 'Dezember': 31}
+    
+    month = int(input("Bitte geben Sie den Monat ein: "))
+    
+    year = int(input("Bitte geben Sie das Jahr ein: " ))
+    
     # Calculate the leap year
     if (year % 4) == 0 and (year % 100) != 0 or (year % 400) == 0:
-        monthdays['February'] = 29
+        monthdays['Februar'] = 29
     else:
-        monthdays['February'] = 28
+        monthdays['Februar'] = 28
 
     # Using Zeller's congruence
     # Change in year if month is January or February
@@ -53,6 +56,7 @@ def print_calendar(month, year):
             print('\n', end='')
 
     if month == 5:
-        print('\n \n''26.05.2022: Christi Himmelfahrt')
+        print('\n \n' '01.05.2022: Tag der Arbeit')
+        print('26.05.2022: Christi Himmelfahrt')
 
-print_calendar('5', '2022')
+print_calendar()
